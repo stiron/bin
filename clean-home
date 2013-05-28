@@ -1,9 +1,4 @@
 #!/bin/bash
 
-# I am too lazy... but it is automated.
-
 cd ~
-
-echo "Cleaning up the home directory..."
 rm -f .goutputstream-*
-echo "[DONE]"
