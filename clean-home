@@ -2,3 +2,4 @@
 
 cd ~
 rm -f .goutputstream-*
+rm -f libpeerconnection.log
