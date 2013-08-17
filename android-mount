@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+case $1 in
+  mount)
+    go-mtpfs /media/MyAndroid
+    if [[ `mount |grep /media/MyAndroid |wc -l` -gt 0 ]];then
+      echo -e "\nThe media has been mounted to the /media/MyAndroid directory.\n"
+    else
+      echo -e "\nMounting the media was not successful! Please try to unlock the keyboard of the device.\n"
+    fi
+  ;;
+  umount)
+    fusermount -u /media/MyAndroid
+    if [[ `mount |grep /media/MyAndroid |wc -l` -eq 0 ]];then
+      echo -e "\nThe media has been unmounted.\n"
+    else
+      echo -e "\nUmounting the media was not successful.\n"
+    fi
+  ;;
+  *)
+    echo -e "\nUsage: $0 [mount|umount]\n"
+  ;;
+esac
+
+exit 0
