@@ -2,7 +2,7 @@
 
 IS_INSTALLED=`which go-mtpfs`
 
-if [[ "${#IS_INSTALLED}" -eq 0 ]]; then
+if [[ ${#IS_INSTALLED} -eq 0 ]]; then
   echo "Please install the go-mtpfs package!"
   exit 1
 fi
