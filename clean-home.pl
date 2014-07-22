@@ -105,7 +105,7 @@ push @del_arr, @gout;
 push @del_arr, @libp;
 push @del_arr, $debug if -e $debug;
 
-if ( scalar( @del_arr ) == 0 ) {
+if ( @del_arr == 0 ) {
   print colored("Nothing to delete!", 'green', 'bold') . "\n";
 } else {
   print colored("Deleting files... ", 'red', 'bold');
