@@ -1,88 +1,11 @@
 #!/usr/bin/env perl
 
-=head1 NAME
-
-I<clean-home.pl> - Keeps my ~ clean
-
-=head1 SYNOPSYS
-
-   clean-home.pl
-
-=cut
-
 use strict;
 use warnings;
 use Getopt::Long;
 use Pod::Usage;
 use Term::ANSIColor;
-
-{
-=head1 DESCRIPTION
-
-CleanHome package, to keep my ~ clean.
-
-Package and script in one file.
-
-I know it is not good, but it is enough for me
-to clean my home directory.
-
-It is rather a technical preview than a 
-real program.
-
-=cut
-
-  package CleanHome;
-
-=head1 OBJECT METHODS
-
-=over 4
-
-=item new()
-
-Creates a new object instance
-
-=cut
-
-  sub new {
-    my $this = shift;
-    my $class = ref($this) || $this;
-    my $self = bless {@_}, $class;
-    return $self;
-  }
-
-=item del_trash()
-
-Deletes the array of files
-
-   @del_arr : (array) list of files to be deleted
-
-=cut
-
-  sub del_trash {
-    my $self = shift;
-    my @files_to_del = @_;
-    for my $to_delete ( @files_to_del ) {
-      unlink $to_delete;
-    }
-  }
-
-=back
-
-=cut
-
-}
-
-=head1 OPTIONS
-
-=over 4
-
-=item --help
-
-Prints this help message to stdout
-
-=back
-
-=cut
+use CleanHome;
 
 my %opts;
 
@@ -115,6 +38,42 @@ if ( @del_arr == 0 ) {
 }
 
 __END__
+
+=head1 NAME
+
+I<clean-home.pl> - Keeps my ~ clean
+
+=head1 SYNOPSYS
+
+   clean-home.pl
+
+=cut
+
+=head1 DESCRIPTION
+
+CleanHome package, to keep my ~ clean.
+
+Package and script in one file.
+
+I know it is not good, but it is enough for me
+to clean my home directory.
+
+It is rather a technical preview than a 
+real program.
+
+=cut
+
+=head1 OPTIONS
+
+=over 4
+
+=item --help
+
+Prints this help message to stdout
+
+=back
+
+=cut
 
 =head1 AUTHOR
 
