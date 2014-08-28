@@ -28,13 +28,9 @@ push @del_arr, @gout;
 push @del_arr, @libp;
 push @del_arr, $debug if -e $debug;
 
-if ( @del_arr == 0 ) {
-  print colored("Nothing to delete!", 'green', 'bold') . "\n";
-} else {
-  print colored("Deleting files... ", 'red', 'bold');
+if ( @del_arr > 0 ) {
   my $delete = CleanHome->new;
   $delete->del_trash( @del_arr );
-  print colored("DONE!", 'red', 'bold') . "\n";
 }
 
 __END__
