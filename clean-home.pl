@@ -5,6 +5,10 @@ use warnings;
 use Getopt::Long;
 use Pod::Usage;
 use Term::ANSIColor;
+
+use FindBin qw($Bin);
+use lib "$Bin/";
+
 use CleanHome;
 
 my %opts;
