@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd ~
-rm -f .goutputstream-*
-rm -f libpeerconnection.log
-rm -f chef-repo/d2014*
