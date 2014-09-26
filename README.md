@@ -4,6 +4,12 @@ It mounts or unmounts an Andorid device on Ubuntu linux.
 
 Usage: `./andorid-mount [mount|umount]`
 
+##clean-home.pl
+
+Perl5 version of my ~ maintenance script, it just collects and deletes several unnecessary files.
+
+OO Perl is used in it with nice PODs.
+
 ##clean-home
 
 It is a script that runs from crontab and deletes unnecessary files in the ~ on Ubuntu 12.04.
