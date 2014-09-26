@@ -7,7 +7,7 @@ use Pod::Usage;
 use Term::ANSIColor;
 
 use FindBin qw($Bin);
-use lib "$Bin/";
+use lib "$Bin/lib";
 
 use CleanHome;
 
