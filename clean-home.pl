@@ -16,9 +16,11 @@ my %opts;
 GetOptions(
   \%opts,
   'help',
+  'man',
 );
 
-pod2usage( -verbose => 2 ) if defined $opts{'help'};
+pod2usage( -verbose => 2 ) if defined $opts{man};
+pod2usage( -verbose => 1 ) if defined $opts{help};
 
 my @del_arr;
 my $home_dir  = $ENV{"HOME"};
@@ -69,7 +71,11 @@ real program.
 
 =item --help
 
-Prints this help message to stdout
+Prints a short help message to stdout
+
+=item --man
+
+Prints detailed help message to stdout
 
 =back
 
