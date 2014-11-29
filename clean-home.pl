@@ -55,14 +55,6 @@ I<clean-home.pl> - Keeps my ~ clean
 
 CleanHome package, to keep my ~ clean.
 
-Package and script in one file.
-
-I know it is not good, but it is enough for me
-to clean my home directory.
-
-It is rather a technical preview than a 
-real program.
-
 =cut
 
 =head1 OPTIONS
@@ -88,5 +80,6 @@ Tamas Molnar <stiron@gmail.com>
 =head1 SEE ALSO
 
 http://perl.org
+https://metacpan.org
 
 =cut

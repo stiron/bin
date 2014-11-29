@@ -24,7 +24,7 @@ sub new {
 Parameters:
 
   param del_arr : (array) list of files to be deleted
-  return        : the deleted file name
+  return        : nothing
 
 =cut
 
@@ -33,7 +33,6 @@ sub del_trash {
   my @files_to_del = @_;
   for my $to_delete ( @files_to_del ) {
     unlink $to_delete;
-    return $to_delete;
   }
 }
 
