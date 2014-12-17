@@ -2,25 +2,11 @@
 
 use strict;
 use warnings;
-use Getopt::Long;
-use Pod::Usage;
-use Term::ANSIColor;
 
 use FindBin qw($Bin);
 use lib "$Bin/lib";
 
 use CleanHome;
-
-my %opts;
-
-GetOptions(
-  \%opts,
-  'help',
-  'man',
-);
-
-pod2usage( -verbose => 2 ) if defined $opts{man};
-pod2usage( -verbose => 1 ) if defined $opts{help};
 
 my @del_arr;
 my $home_dir  = $ENV{"HOME"};
@@ -38,48 +24,3 @@ if ( @del_arr > 0 ) {
   my $delete = CleanHome->new;
   $delete->del_trash( @del_arr );
 }
-
-__END__
-
-=head1 NAME
-
-I<clean-home.pl> - Keeps my ~ clean
-
-=head1 SYNOPSYS
-
-   clean-home.pl
-
-=cut
-
-=head1 DESCRIPTION
-
-CleanHome package, to keep my ~ clean.
-
-=cut
-
-=head1 OPTIONS
-
-=over 4
-
-=item --help
-
-Prints a short help message to stdout
-
-=item --man
-
-Prints detailed help message to stdout
-
-=back
-
-=cut
-
-=head1 AUTHOR
-
-Tamas Molnar <stiron@gmail.com>
-
-=head1 SEE ALSO
-
-http://perl.org
-https://metacpan.org
-
-=cut
