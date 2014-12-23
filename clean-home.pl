@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 {
-  package CleanHome;
+  package CleanMyHome;
 
   sub new {
     my $this = shift;
@@ -24,7 +24,7 @@ use warnings;
   1;
 }
 
-sub create_and_delete_file_list {
+sub create_file_list {
   my @del_arr;
   my $home_dir  = $ENV{"HOME"};
   my @debug     = glob "$home_dir/*debuglog.txt";
@@ -37,8 +37,13 @@ sub create_and_delete_file_list {
   push @del_arr, @libp;
   push @del_arr, $debug if -e $debug;
 
+  return \@del_arr;
+}
+
+sub delete_files {
+  my @del_arr = @_;
   if ( @del_arr > 0 ) {
-    my $delete = CleanHome->new;
+    my $delete = CleanMyHome->new;
     $delete->delete_files( @del_arr );
   } else {
     die "There is nothing to clean at the moment!\n";
@@ -48,7 +53,8 @@ sub create_and_delete_file_list {
 }
 
 sub main {
-  create_and_delete_file_list();
+  my $del_arr = create_file_list();
+  delete_files( @{$del_arr} );
 }
 
 main();
