@@ -48,7 +48,7 @@ sub delete_files {
         $delete->delete_files(@del_arr);
     }
     else {
-        die "There is nothing to clean at the moment!\n";
+        exit 0;
     }
 
     return 1;
