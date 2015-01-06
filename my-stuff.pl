@@ -16,10 +16,10 @@ if ( $ARGV[0] ne "mount" and $ARGV[0] ne "umount" ) {
     die $usage;
 }
 elsif ( $ARGV[0] eq "mount" ) {
-    qx(/usr/bin/encfs ~/$encrypted ~/$decrypted);
+    qx(/usr/bin/encfs $encrypted $decrypted);
 }
 elsif ( $ARGV[0] eq "umount" ) {
-    qx(/bin/fusermount -u ~/$decrypted);
+    qx(/bin/fusermount -u $decrypted);
 }
 else {
     die $usage;
