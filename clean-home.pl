@@ -3,26 +3,11 @@
 use strict;
 use warnings;
 
-{
-
-    package CleanMyHome;
-
-    sub new {
-        my $this  = shift;
-        my $class = ref($this) || $this;
-        my $self  = bless {@_}, $class;
-        return $self;
+sub unlink_them {
+    my @files_to_del = @_;
+    for my $to_delete (@files_to_del) {
+        unlink $to_delete;
     }
-
-    sub delete_files {
-        my $self         = shift;
-        my @files_to_del = @_;
-        for my $to_delete (@files_to_del) {
-            unlink $to_delete;
-        }
-    }
-
-    1;
 }
 
 sub create_file_list {
@@ -44,8 +29,7 @@ sub create_file_list {
 sub delete_files {
     my @del_arr = @_;
     if ( @del_arr > 0 ) {
-        my $delete = CleanMyHome->new;
-        $delete->delete_files(@del_arr);
+        unlink_them(@del_arr);
     }
     else {
         exit 0;

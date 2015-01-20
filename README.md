@@ -1,10 +1,7 @@
 BIN in HOME
 ===========
 
-There are a lot of good configuration management tools for linux, but sometimes a single script can be handy.
-
-Please do not forget the UNIX philosophy that one tool for one task (or something similar).
-That is the philosophy behind these old, small scripts that I've written to make my life easier.
+These scripts are just handy for me...
 
 Scripts
 -------
