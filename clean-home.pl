@@ -11,18 +11,8 @@ sub unlink_them {
 }
 
 sub create_file_list {
-    my @del_arr;
     my $home_dir = $ENV{"HOME"};
-    my @debug    = glob "$home_dir/*debuglog.txt";
-    my @gout     = glob "$home_dir/.goutputstream-*";
-    my @libp     = glob "$home_dir/libpeerconnection*";
-    my $debug    = $home_dir . '/C:\nppdf32Log\debuglog.txt';
-
-    push @del_arr, @debug;
-    push @del_arr, @gout;
-    push @del_arr, @libp;
-    push @del_arr, $debug if -e $debug;
-
+    my @del_arr  = glob "$home_dir/.goutputstream-*";
     return \@del_arr;
 }
 
@@ -34,13 +24,12 @@ sub delete_files {
     else {
         exit 0;
     }
-
     return 1;
 }
 
 sub main {
     my $del_arr = create_file_list();
-    delete_files( @{$del_arr} );
+    delete_files( @$del_arr );
 }
 
 main();
