@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-my $home      = "/home/iron";
+my $home      = "/home/tmolnar";
 my $encrypted = "$home/stuff/others/.private";
 my $decrypted = "$home/stuff/others/private";
 
