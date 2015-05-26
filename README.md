@@ -22,15 +22,9 @@ Usage: `./my-stuff [mount|umount]`
 
 ##License
 
-Author: Tamas Molnar
-
 Copyright 2015, Tamas Molnar.
 
-Licensed under the Apache License, Version 2.0 (the "License")### cleanup
-
-The cleanup recipe removes the deb file from the client, and empties the apt cache;
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License")
 
 http://www.apache.org/licenses/LICENSE-2.0
 
