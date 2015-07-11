@@ -9,7 +9,6 @@ my $encrypted = "$home/stuff/others/.private";
 my $decrypted = "$home/stuff/others/private";
 
 my $usage = "Usage: $0 [mount|umount]
-
 mount:  mounts the private storage
 umount: umounts the private storage\n";
 
