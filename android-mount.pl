@@ -1,7 +1,6 @@
 #!/usr/bin/env perl
 
 use strict;
-use warnings;
 use Data::Dumper;
 use IPC::Run3;
 
@@ -52,7 +51,6 @@ sub mount_fs {
 sub umount_fs {
     my @cmd = qw(/bin/fusermount -u /media/MyAndroid);
     my $data = run_cmd(@cmd);
-    my $check_umount = qx(/bin/mount |grep /media/MyAndroid);
     if ( $data->{exit} != 0 ) {
         die("Command run was not successful: $data->{stderr}\n");
     }
