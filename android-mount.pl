@@ -44,7 +44,6 @@ sub mount_fs {
     if ( $data->{exit} != 0 ) {
         die("Command run was not successful: $data->{stderr}\n");
     }
-    print "The filesystem could not be mounted\n";
     return 1;
 }
 
