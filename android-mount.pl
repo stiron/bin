@@ -20,6 +20,10 @@ sub run_cmd {
         exit   => $exit,
     );
 
+    if ( $retval{exit} != 0 ) {
+        die("Command run was not successful: $retval{stderr}\n");
+    }
+
     return \%retval;
 }
 
@@ -41,19 +45,13 @@ elsif ( $action eq "umount" ) {
 sub mount_fs {
     my @cmd  = qw(/usr/bin/go-mtpfs /media/MyAndroid);
     my $data = run_cmd(@cmd);
-    if ( $data->{exit} != 0 ) {
-        die("Command run was not successful: $data->{stderr}\n");
-    }
-    return 1;
+    exit 0;
 }
 
 sub umount_fs {
-    my @cmd = qw(/bin/fusermount -u /media/MyAndroid);
+    my @cmd  = qw(/bin/fusermount -u /media/MyAndroid);
     my $data = run_cmd(@cmd);
-    if ( $data->{exit} != 0 ) {
-        die("Command run was not successful: $data->{stderr}\n");
-    }
-    return 1;
+    exit 0;
 }
 
 sub exit_error {
