@@ -29,7 +29,7 @@ sub delete_files {
 
 sub main {
     my $del_arr = create_file_list();
-    delete_files(@$del_arr);
+    delete_files(@{$del_arr});
 }
 
 main();
