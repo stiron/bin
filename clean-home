@@ -4,6 +4,11 @@ use strict;
 use warnings;
 use Data::Dumper;
 
+#
+# Due to an error there are temp files in the home
+# on Ubuntu 12.04, this script just removes them
+#
+
 my $home                = $ENV{'HOME'};
 my @staged_for_deletion = glob "${home}/.goutputstream-*";
 
