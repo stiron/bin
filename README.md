@@ -1,28 +1,6 @@
-#My Bin dir
+#My ~/bin
 
-##Scripts
-
-###android_mount.pl
-
-It can mount and/or umount an Andorid device on Ubuntu 12.04 linux.
-
-Usage: `./andorid-mount.pl [mount|umount]`
-
-###clean-home.pl
-
-Home directory maintenance script for Ubuntu 12.04, it just collects and deletes several files.
-
-Usage: `./clean-home.pl`
-
-###my-stuff.pl
-
-It mounts and/or umounts my encfs file system.
-
-Usage: `./my-stuff [mount|umount]`
-
-##License
-
-Copyright 2015, Tamas Molnar.
+Copyright 2015, 2016, Tamas Molnar.
 
 Licensed under the Apache License, Version 2.0 (the "License"), you may 
 not use this file except in compliance with the License.
