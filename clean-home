@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Data::Dumper;
+
+my $home                = $ENV{'HOME'};
+my @staged_for_deletion = glob "${home}/.goutputstream-*";
+
+for (@staged_for_deletion) {
+    print "Removing $_...\n";
+    unlink $_ or die "Cannot remove $_: $!\n";
+}
