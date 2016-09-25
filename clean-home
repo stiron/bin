@@ -2,16 +2,19 @@
 
 use strict;
 use warnings;
-use Data::Dumper;
 
 #
-# Due to an error there are temp files in the home
-# on Ubuntu 12.04, this script just removes them
+# Due to a bug there are temp files in the home folder
+# on Ubuntu 12.04, this script removes them
 #
 
-my $home                = $ENV{'HOME'};
-my @staged_for_deletion = glob "${home}/.goutputstream-*";
+main();
 
-for (@staged_for_deletion) {
-    unlink $_ or die "Cannot remove $_: $!\n";
+sub main {
+    my $home_folder               = $ENV{'HOME'};
+    my @files_staged_for_deletion = glob "${home_folder}/.goutputstream-*";
+
+    for (@files_staged_for_deletion) {
+        unlink $_ or die "Cannot remove $_: $!\n";
+    }
 }
