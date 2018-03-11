@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+CURDIR=$(pwd)
+ORGDIR=~/stuff/organizer
+
+cd $ORGDIR
+git commit -am 'Organizing'
+git push
+cd $CURDIR

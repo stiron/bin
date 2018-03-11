@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CURDIR=$(pwd)
+ORGDIR=~/stuff/organizer
+
+cd $ORGDIR
+git pull
+cd $CURDIR
