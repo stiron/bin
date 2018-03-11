@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CURDIR=$(pwd)
+VIMDIR="$HOME/.vim/bundle"
+
+cd $VIMDIR
+for i in $(ls)
+do
+  cd $i && git pull origin master && cd ..
+done

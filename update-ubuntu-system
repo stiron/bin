@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CURDIR=$(pwd)
+cd ~/stuff/projects/ansible/
+sudo apt-get -q update; sudo apt-get -y -q upgrade; sudo apt autoremove
+cd $CURDIR

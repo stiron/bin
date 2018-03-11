@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+CURDIR=$(pwd)
+ANSDIR="$HOME/stuff/projects/ansible/roles"
+
+cd $ANSDIR
+for i in $(ls)
+do
+    cd $i
+    if [ -d .git ]; then
+      git pull origin master
+    else
+      echo "$i is not a GIT repo"
+    fi
+    cd ..
+done
